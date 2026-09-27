@@ -34,7 +34,6 @@ func generateCode() string {
 	return string(code)
 }
 
-// POST /shorten
 func shortenURL(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -62,7 +61,6 @@ func shortenURL(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// GET /{code}
 func redirectURL(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Path[1:]
 
